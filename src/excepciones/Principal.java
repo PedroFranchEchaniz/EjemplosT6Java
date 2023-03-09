@@ -1,5 +1,7 @@
 package excepciones;
 
+import java.util.StringJoiner;
+
 public class Principal {
 
 	public static void main(String[] args) {
@@ -15,7 +17,11 @@ public class Principal {
 		}while (denominador == 0);
 		
 		resultado=numerador/denominador;
-		System.out.printf("%.2f" ,resultado);
-	}
+		System.out.printf("%.2f\n" ,resultado);
+		
+		
+		
+		
+	}	
 
 }
