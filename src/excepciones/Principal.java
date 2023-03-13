@@ -1,27 +1,33 @@
 package excepciones;
 
-import java.util.StringJoiner;
+import utilidades.Leer;
 
 public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		double numerador = 10, denominador = 1;
+		int numerador = 10, denominador = 1;
 		double resultado;
-		
-		
+
 		do {
-			
-			System.out.println("El denominador no puede ser 0");
-		}while (denominador == 0);
-		
-		resultado=numerador/denominador;
-		System.out.printf("%.2f\n" ,resultado);
-		
-		
-		
-		
-	}	
+			try {
+
+				System.out.println("Introduzca el numerador");
+				numerador = Leer.datoInt();
+				System.out.println("Introduzca el denominador");
+				denominador = Leer.datoInt();
+				resultado = numerador / denominador;
+				System.out.printf("La division es: %.2f\n", resultado);
+
+			} catch (ArithmeticException a) {
+				System.out.println("!Está usted dividiendo por cero!");
+			} catch (NumberFormatException n) {
+				System.out.println("Dato no valido");
+			} catch (Exception e) {
+				System.out.println("!Error inesperado!");
+			}
+		} while (denominador != 0);
+	}
 
 }
