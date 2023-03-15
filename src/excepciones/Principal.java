@@ -6,28 +6,24 @@ public class Principal {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-		int numerador = 10, denominador = 1;
+		int num, deno=0;
 		double resultado;
-
 		do {
 			try {
-
-				System.out.println("Introduzca el numerador");
-				numerador = Leer.datoInt();
-				System.out.println("Introduzca el denominador");
-				denominador = Leer.datoInt();
-				resultado = numerador / denominador;
-				System.out.printf("La division es: %.2f\n", resultado);
-
-			} catch (ArithmeticException a) {
-				System.out.println("!Está usted dividiendo por cero!");
-			} catch (NumberFormatException n) {
-				System.out.println("Dato no valido");
-			} catch (Exception e) {
-				System.out.println("!Error inesperado!");
+				System.out.println("Ponga el número que quiere poner en el numerador");
+				num=Leer.datoInt();
+				System.out.println("Ponga el número que quiere poner en el denominador");
+				deno=Leer.datoInt();
+				resultado=num/deno;
+				System.out.println(resultado);
+			}catch (ArithmeticException e) {
+				System.err.println("¡Error estas dividiendo entre 0!");
+			}catch (NumberFormatException e) {
+				System.err.println("¡No metas letritas que era un númerito!");
+			}catch (Exception e) {
+				System.err.println("¡Error INESPERADO!");
 			}
-		} while (denominador != 0);
+		}while(deno!=0);
 	}
 
 }
