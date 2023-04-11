@@ -33,7 +33,10 @@ public class Principal {
 			System.out.println(o.getMessage());			
 		}catch(Error2 e) {
 			System.out.println(e.getMessage());			
+		}catch(NumberFormatException i) {
+			System.out.println("No admite letras");
 		}
+		
 		
 		
 		
